@@ -1,0 +1,1 @@
+# termight.nvim
