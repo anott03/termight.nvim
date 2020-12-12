@@ -1,9 +1,6 @@
 let g:term_buf_list = [0, 0, 0, 0]
 
-nnoremap <leader>1 :call OpenTerm(1)<CR>
-nnoremap <leader>2 :call OpenTerm(2)<CR>
-nnoremap <leader>3 :call OpenTerm(3)<CR>
-nnoremap <leader>4 :call OpenTerm(4)<CR>
+:command -nargs=1 OpenTerm :call OpenTerm(<args>)
 
 fun! OpenTerm(idx)
   let g:idx = a:idx
