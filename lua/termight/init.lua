@@ -3,7 +3,8 @@ local bufs = vim.g["term_buf_list"]
 
 local function initializeNewTerm()
     local idx = vim.g["idx"]
-    vim.cmd("let g:term_buf_list[g:idx - 1] = "  .. vim.api.nvim_create_buf(true, false))
+    vim.cmd("let g:term_buf_list[g:idx - 1] = "
+      .. vim.api.nvim_create_buf(true, false))
     bufs = vim.g["term_buf_list"]
     vim.api.nvim_set_current_buf(bufs[idx])
     vim.api.nvim_exec(":term", {})
@@ -21,11 +22,10 @@ end
 local function openTerm()
   local idx = vim.g["idx"]
   if idx and idx <= #bufs then
-    if bufs[idx] == 0 then
+    if bufs[idx] == 0 or not bufExists(idx) then
       initializeNewTerm()
     else
-      if bufExists(idx) then vim.api.nvim_exec(bufs[idx] .. "buf!", nil)
-      else initializeNewTerm() end
+      vim.api.nvim_exec(bufs[idx] .. "buf!", nil)
     end
   else
     print("invalid index")
