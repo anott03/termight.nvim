@@ -9,7 +9,7 @@ Though only tested with [vim-plug](https://github.com/junegunn/vim-plug), you sh
 Plug 'anott03/termight.nvim', { 'branch': 'main' }
 ````
 ## Usage
-Termight adds the `OpenTerm` editor command. You can then make the call `OpenTerm x` where `x` is either 1, 2, 3 or 4. I recommend creating keybindings for this. I have the following in my `init.vim`:
+Termight adds the `OpenTerm` editor command. You can then make the call `OpenTerm x` where `x` is either 1, 2, 3 or 4. I recommend creating keybindings for this:
 ````vim
 nnoremap <leader>1 :OpenTerm 1
 nnoremap <leader>2 :OpenTerm 2
