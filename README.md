@@ -4,7 +4,7 @@ Termight is a neovim extension designed to make handling terminal buffers in neo
 
 ## Installation
 Though only tested with vim-plug, you should be able to install termight with any nvim plugin manager.
-Vim-plug:
+#### Vim-plug:
 ````vim
 Plug 'anott03/termight.nvim', { 'branch': 'main' }
 ````
