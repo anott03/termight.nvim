@@ -16,3 +16,10 @@ nnoremap <leader>2 :OpenTerm 2
 nnoremap <leader>3 :OpenTerm 3
 nnoremap <leader>4 :OpenTerm 4
 ````
+Or, if you're using `init.lua`:
+````lua
+vim.api.nvim_set_keymap("n", "<leader>1", "<CMD>OpenTerm 1<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>2", "<CMD>OpenTerm 2<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>3", "<CMD>OpenTerm 3<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>4", "<CMD>OpenTerm 4<CR>", {})
+````
