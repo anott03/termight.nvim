@@ -32,6 +32,20 @@ local function openTerm()
   end
 end
 
+local function openFloatingTerm()
+  local idx = vim.g["idx"]
+  if idx and idx <= #bufs then
+    if bufs[idx] == 0 or not bufExists(idx) then
+      -- initializeNewTerm()
+    else
+     vim.api.nvim_exec(bufs[idx] .. "buf!", nil)
+    end
+  else
+    print("invalid index")
+  end
+end
+
 return {
   openTerm = openTerm,
+  openFloatingTerm = openFloatingTerm
 }
