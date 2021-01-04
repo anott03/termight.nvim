@@ -9,7 +9,6 @@ fun! OpenTerm(idx)
 endfun
 
 fun! RunShellCommand(cmd)
-  lua for k in pairs(package.loaded) do if k:match("^termight") then package.loaded[k] = nil end end
   let g:termight_cmd = a:cmd
   lua require("termight").runShellCommand()
 endfun
