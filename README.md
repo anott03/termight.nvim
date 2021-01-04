@@ -28,3 +28,4 @@ vim.api.nvim_set_keymap("n", "<leader>2", "<CMD>OpenTerm 2<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>3", "<CMD>OpenTerm 3<CR>", {})
 vim.api.nvim_set_keymap("n", "<leader>4", "<CMD>OpenTerm 4<CR>", {})
 ````
+If you're using the development version of termight (the main branch), then you also have the `RunShellCommand` editor command. It takes a string, the shell command you want to run, as its only argument. An example usage may look like `:RunShellCommand "npm run build --prod"`. This command is meant to be used in the short term, meaning that it's output is not persisted anywhere and when the buffer is closed, all processes inside are killed. So, for example, this would not be the right place to run a server, but may be good to check if your code compiles, or to see the output of a calculation.
