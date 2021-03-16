@@ -37,25 +37,8 @@ end
 local function runShellCommand()
   local cmd = vim.g["termight_cmd"]
 
-  -- getting the current window width and height
-  -- as well as defining the factor size the floating
-  -- window on
-  local stats = vim.api.nvim_list_uis()[1]
-  local width = stats.width;
-  local height = stats.height;
-  local factor = 0.9;
-
-  -- creating a new buffer
-  local bufh = vim.api.nvim_create_buf(false, true)
-  -- creating the window
-  vim.api.nvim_open_win(bufh, true, {
-    relative = "editor",
-    width    = math.floor(width * factor),
-    height   = math.floor(height * factor),
-    col      = math.floor(width * (1 - factor) / 2),
-    row      = math.floor(height * (1 - factor) / 2),
-    style    = "minimal"
-  })
+  local info = require('plenary.window.float').percentage_range_window(0.9, 0.9, {})
+  local bufh = info.bufnr
   vim.fn.termopen(cmd)
 
   -- bindings: esc to close the window, disable ways to enter insert mode

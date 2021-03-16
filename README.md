@@ -11,6 +11,7 @@ Plug 'anott03/termight.nvim', { 'branch': 'v1' }
 ````
 To install the latest version, actively being developed upon:
 ````vim
+Plug 'nvim-lua/plenary.nvim'
 Plug 'anott03/termight.nvim', { 'branch': 'main' }
 ````
 ## Usage
